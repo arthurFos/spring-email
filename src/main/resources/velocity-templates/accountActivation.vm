@@ -1,0 +1,33 @@
+## $sex, $name, $link
+
+#set($subject = "Konto Aktivierung")
+##parse("shared/header.vm")
+<!DOCTYPE html>
+<html>
+<body>
+<div>
+    <h3>Subject $subject</h3>
+    <p>
+        #if($sex == 'M')
+            Sehr geehrter Herr $name,
+        #else
+            Sehr geehrte Frau $name,
+        #end
+        <br/>
+        Vielen Dank für Ihre Anmeldung. Um Ihre Registrierung abzuschließen, klicken Sie bitte auf den folgenden Link, um Ihr Konto zu aktivieren
+        <br/>
+        <a href="'$link'" target="_blank">Konto Aktivieren.</a>
+        <br/>
+        Dieser Link ist nur für 24 Stunden gültig.
+    </p>
+</div>
+
+<div>
+    Arthur Fotso
+    Poststr. 6
+    64285 Darmstadt
+    ## Logo
+</div>
+</body>
+</html>
+##parse("shared/footer.vm");
